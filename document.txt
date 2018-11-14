@@ -1,0 +1,22 @@
+﻿
+
+note : 
+-没有 typescript
+-要 customize 就自己 build 然后 import，要用 plugin 也是是这样.
+-图片 upload default 是它的云，支持 srcset, 但是原理不明
+自己要写的话，可以试试下面的拦截, 但是感觉这个实现不好，利用不到 ng 的插件
+https://github.com/ckeditor/ckeditor5-adapter-ckfinder/blob/master/src/uploadadapter.js
+https://ckeditor.com/docs/ckeditor5/latest/api/module_upload_filerepository-UploadAdapter.html
+https://ckeditor.com/docs/ckeditor5/latest/api/module_upload_filerepository-FileRepository.html
+https://stackoverflow.com/questions/46765197/how-to-enable-image-upload-support-in-ckeditor-5
+https://stackoverflow.com/questions/49385792/how-to-do-ckeditor-5-image-uploading?noredirect=1&lq=1
+
+要完全自定义处理东西需要具备 2 个解救
+1. 写 plugin 
+可以看里面的例子，基本上做一个 ui button 拦截点击事件
+然后想办法触发事件让 ng 去监听和处理. 
+然后呢 ng 在通过 editor 直接写入内容等等
+
+2. 对于已经在 display 里面的东西实现监听让它可以被 edit. 
+这个我还没有找怎样弄。等以后吧. 
+
